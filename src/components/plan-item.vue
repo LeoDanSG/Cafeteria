@@ -2,7 +2,7 @@
     <div class="plan">
         <div class="description">
             <span class="title">
-                {{ name }}
+                {{ name }} 👍 Likes: {{ likes }}
             </span>
         </div>
       </div>
@@ -10,5 +10,14 @@
 
 <script setup>
 //Macro
-defineProps(['name']);
+defineProps({
+    name: {
+        type: String,
+        required: true,
+    },
+    likes: {
+        type: Number,
+        default: 0,
+    }
+});
 </script>
