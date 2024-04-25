@@ -1,6 +1,7 @@
 <template>
-    <div class="plans">
-      <plan-picker-item 
+    <div @click="select" class="plans">
+      <plan-picker-item
+      @select="printSelected"
       v-for="plan in plans" 
       :name="plan"
       v-bind:key="plan" />
@@ -16,4 +17,8 @@ const plans = ref([
   "El viajero",
   "El colombiano",
   "El italiano"]);
+
+  const printSelected = (playload) => {
+    console.log (`Se selecciono: ${playload}`);
+  }
 </script>
