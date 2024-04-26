@@ -5,6 +5,7 @@
       v-for="plan in plans" 
       :name="plan"
       v-bind:key="plan" />
+      {{ selectedPlan }}
     </div>
 </template>
 
@@ -18,7 +19,9 @@ const plans = ref([
   "El colombiano",
   "El italiano"]);
 
+  const selectedPlan = ref(null);
+
   const printSelected = (playload) => {
-    console.log (`Se selecciono: ${playload}`);
+    selectedPlan.value = playload;
   }
 </script>
